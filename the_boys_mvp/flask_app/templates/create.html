@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>comment Form</title>
+</head>
+<body>
+    <form action="/create" method="post" class="p-3 col-4 mx-auto my-5 bg-dark text-light">
+        <h2 class="text-center text-primary">Create comment:</h2>
+    
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="hidden" name="first_name" id="name" class="form-control" value="{{session['name']}}">
+        </div>
+        <div class="form-group">
+            <label for="comment">Comment:</label>
+            <input type="textbox" name="comment" id="comment" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="title">title:</label>
+            <input type="text" name="title" id="title" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="hidden" name="topic_id" id="topic_id" class="form-control" value="{{topic_id}}">
+        </div>
+        <div class="form-group">
+            <input type="hidden" name="user_id" id="user_id" class="form-control" value="{{session['user_id']}}">
+        </div>
+        <input type="submit" value="post" class="btn btn-primary btn-outline-dark">
+    </form>
+</body>
+</html>
+<!--  -->
+<!-- <p>My cat's name is {{cat}}.</p> -->

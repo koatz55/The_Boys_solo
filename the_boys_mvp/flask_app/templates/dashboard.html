@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h1>Welcome {{user.first_name}}!!!</h1>
+        <a href="/logout">Logout</a>
+    </nav>
+    {% for topic in all_topics %}
+        <div>
+            <p value={{topic.id}}>
+                <a href="/topic/comments/create/{{topic['id']}}">{{topic['name']}}</a>
+                <p>{{topic['bio']}}</p>
+            <p>
+        </div>
+    {% endfor %}
+</body>
+</html>

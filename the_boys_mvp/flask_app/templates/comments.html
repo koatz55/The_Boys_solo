@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h1>Welcome {{session['name']}}!!!</h1>
+        <a href="/logout">Logout</a>
+    </nav>
+    <div>
+       <h2>{{topic.name}}</h2>
+       <p>{{topic.bio}}</p> 
+    </div>
+    {% for comment in topic.comments %}
+        <div>
+            <tr>
+                <td>{{comment['comment']}}</td>
+                <td>{{comment['title']}}</td>
+                <td>{{comment['first_name']}}</td>
+                <a href="/update/{{comment['id']}}/{{comment['topic_id']}}">Edit</a>
+                <a href="/delete/{{comment['id']}}/{{comment['topic_id']}}">Delete</a>
+            <tr>
+        </div>
+    {% endfor %}
+</body>
+</html>
