@@ -15,16 +15,16 @@
        <h2>{{topic.name}}</h2>
        <p>{{topic.bio}}</p> 
     </div>
-    {% for comment in topic.comments %}
+    <div>
+        {% for comment in topic.comments %}
         <div>
-            <tr>
-                <td>{{comment['comment']}}</td>
-                <td>{{comment['title']}}</td>
-                <td>{{comment['first_name']}}</td>
-                <a href="/update/{{comment['id']}}/{{comment['topic_id']}}">Edit</a>
-                <a href="/delete/{{comment['id']}}/{{comment['topic_id']}}">Delete</a>
-            <tr>
+            <title>{{comment['title']}}</title>
+            {{comment['comment']}}
+            <p>{{comment['first_name']}}<p>
+            <a href="/update/{{comment['id']}}/{{comment['topic_id']}}">Edit</a>
+            <a href="/delete/{{comment['id']}}/{{comment['topic_id']}}">Delete</a>
         </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </body>
 </html>
